@@ -2,8 +2,11 @@
 @import "font-awesome-sprockets";
 @import "./font-awesome";
 @import "./mixin/mixin";
+@import "config/colors";
+@import "modules/flash";
 @import "./side_bar";
 @import "./main_chat";
+@import "modules/user";
 .wrapper{
   display: flex;
 }
