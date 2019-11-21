@@ -1,0 +1,35 @@
+.side-bar {
+  @include square-setting(100vh,300px,#2f3e51);
+  .side-header {
+    @include square-setting(100px,null,#253141);
+    padding: 0 20px;
+    line-height: 100px;
+    &__box {
+      margin: auto 0px;
+      @include space-between();
+      &__user-name {
+        @include font-setting(#FFFFFF,16px,bold)
+      }
+      &__btn{
+        size: 1.2rm;
+        &--icon{
+          color: #FFFFFF;
+        }
+      }
+    }
+  }
+  .group-list {
+    @include square-setting(calc(100%-100px),260px,null);
+    padding: 20px 20px 40px 20px;
+    &__info {
+      margin-bottom: 40px;
+      &__name {
+        @include font-setting(#FFFFFF,15px,bold);
+        margin-bottom: 5px;
+      }
+      &__new-message {
+        @include font-setting(#FFFFFF,11px,bold)
+      }
+    }
+  }
+}

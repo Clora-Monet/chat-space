@@ -1,0 +1,87 @@
+.main {
+  width: calc(100vw - 300px);
+  &__header {
+    height: 97px;
+    padding: 0 40px;
+    border-bottom: solid #eeeeee;
+    @include space-between();
+    &__group__info {
+      padding-top: 35px;
+      &__name {
+        @include font-setting(#333333,20px,normal);
+      }
+      &__members {
+        @include font-setting(#999999,12px,normal);
+        padding-top: 15px;
+      }
+    }
+    &__edit-btn {
+      height: 40px;
+      margin: 28px 0;
+      padding: 0 20px;
+      border: solid #38aef0;
+      display: flex;
+      align-items: center;
+      &__text{
+        color: #38aef0;
+        text-decoration: none;
+      }
+    }
+  }
+  &__messages {
+    padding: 0 40px;
+    height: calc(100vh - 190px);
+    &__box {
+      padding-top: 46px;
+      &__info {
+        padding-bottom: 10px;
+        display: flex;
+        &__user-name {
+          @include font-setting(#434A54,16px,bold);
+          padding-right: 10px;
+        }
+        &__creat-at {
+          @include font-setting(#999999,12px,normal);
+        }
+      }
+      &__text {
+        @include font-setting(#434A54,14px,normal);
+      }
+    }
+  }
+  &__form {
+    @include square-setting(50px,null,#dddddd);
+    padding: 20px 40px;
+    &__new-message {
+      display: flex;
+      &__input {
+        @include square-setting(null,100%,#FFFFFF);
+        padding: 0 40px 0 0px;
+        position: relative;
+        &__text {
+          @include font-setting(#434A54,16px,normal);
+          @include square-setting(50px,100%,null);
+          padding: 0 40px 0 10px;
+          border-style: none;
+          }
+        &__file-icon {
+          font-size: 1.3rem;
+          position: absolute;
+          top: 15px;
+          right: 10px;
+        }
+        &__file-select-btn {
+          display: none;
+        }
+      }
+      &__send-btn {
+        @include square-setting(50px,40px,#38AEF0);
+        color: #FFFFFF;
+        line-height: 50px;
+        text-decoration: none;
+        margin-left: 25px;
+        padding: 0px 30px;
+      }
+    }
+  }
+}

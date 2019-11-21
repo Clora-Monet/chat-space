@@ -1,0 +1,19 @@
+// space-bitweenの設定
+@mixin space-between() {
+  display: flex;
+  justify-content: space-between;
+}
+
+// フォントの設定(文字色,文字サイズ,文字の太さ)
+@mixin font-setting($color,$font-size,$font-weight) {
+  color: $color;
+  font-size: $font-size;
+  font-weight: $font-weight;
+}
+
+// 四角のエリアの設定(縦,横,背景色)
+@mixin square-setting($height,$width,$background-color) {
+  height: $height;
+  width: $width;
+  background-color: $background-color;
+}
