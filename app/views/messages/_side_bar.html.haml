@@ -1,0 +1,21 @@
+.side-bar
+  .side-header
+    .side-header__box
+      .side-header__box__user-name
+        UserName
+      .side-header__box__btn
+        =link_to "#", class: "side-header__box__btn__create" do
+          = icon('fas', 'edit', class: "side-header__box__btn--icon")
+        =link_to "#", class: "side-header__box__btn__edit" do
+          = icon('fas', 'cog', class: "side-header__box__btn--icon")
+  .group-list
+    .group-list__info
+      .group-list__info__name
+        GroupName1
+      .group-list__info__new-message
+        MessageNew1
+    .group-list__info
+      .group-list__info__name
+        GroupName2
+      .group-list__info__new-message
+        MessageNew2

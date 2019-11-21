@@ -1,0 +1,29 @@
+.main
+  .main__header
+    .main__header__group__info
+      .main__header__group__info__name
+        Group Name
+      .main__header__group__info__members
+        Member:
+    .main__header__edit-btn
+      =link_to "#", class: "main__header__edit-btn__text" do
+        Edit
+  .main__messages
+    .main__messages__box
+      .main__messages__box__info
+        .main__messages__box__info__user-name
+          UserName
+        .main__messages__box__info__creat-at
+          2019/01/01 19:00:00
+      .main__messages__box__text
+        Message
+  .main__form
+    .main__form__new-message
+      .main__form__new-message__input
+        %input.main__form__new-message__input__text{:name => "body", :placeholder => "type a message", :type => "text",}/
+        %label<>
+          = icon('far', 'image', class: "main__form__new-message__input__file-icon")
+          %input.main__form__new-message__input__file-select-btn{:name => "body", :type => "file"}/
+      =link_to "#", class: "main__form__new-message__send-btn" do
+        SEND
+
