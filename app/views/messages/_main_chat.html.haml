@@ -8,7 +8,7 @@
         - @messages.each do |message|
           = message.user.name
     .main__header__edit-btn
-      =link_to edit_group_path, class: "main__header__edit-btn__text" do
+      =link_to edit_group_path(@group), class: "main__header__edit-btn__text" do
         Edit
   .main__messages
     = render @messages
