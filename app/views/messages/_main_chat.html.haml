@@ -18,12 +18,11 @@
       .main__messages__box__text
         Message
   .main__form
-    .main__form__new-message
-      .main__form__new-message__input
-        %input.main__form__new-message__input__text{name: "body", placeholder: "type a message", type: "text",}/
-        %label<>
-          = icon('far', 'image', class: "main__form__new-message__input__file-icon")
-          %input.main__form__new-message__input__file-select-btn{name: "body", type: "file"}/
-      =link_to "#", class: "main__form__new-message__send-btn" do
-        SEND
-
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'main__form__message', placeholder: "type a message"
+      .main__form__mask
+        = f.label :image, class: 'main__form__mask__image' do
+          = icon('far', 'image', class: "main__form__mask__image__file-icon")
+          = f.file_field :image, class: 'main__form__mask__image__file-select-btn'
+      = f.submit 'Send', class: 'main__form__send-btn'
+      
