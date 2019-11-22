@@ -9,14 +9,7 @@
       =link_to "#", class: "main__header__edit-btn__text" do
         Edit
   .main__messages
-    .main__messages__box
-      .main__messages__box__info
-        .main__messages__box__info__user-name
-          UserName
-        .main__messages__box__info__creat-at
-          2019/01/01 19:00:00
-      .main__messages__box__text
-        Message
+    = render @messages
   .main__form
     = form_for [@group, @message] do |f|
       = f.text_field :content, class: 'main__form__message', placeholder: "type a message"
@@ -25,4 +18,3 @@
           = icon('far', 'image', class: "main__form__mask__image__file-icon")
           = f.file_field :image, class: 'main__form__mask__image__file-select-btn'
       = f.submit 'Send', class: 'main__form__send-btn'
-      
