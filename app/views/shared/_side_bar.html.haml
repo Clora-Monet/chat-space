@@ -4,18 +4,15 @@
       .side-header__box__user-name
         = current_user.name
       .side-header__box__btn
-        =link_to "#", class: "side-header__box__btn__create" do
+        =link_to new_group_path, class: "side-header__box__btn__create" do
           = icon('fas', 'edit', class: "side-header__box__btn--icon")
         =link_to "#", class: "side-header__box__btn__edit" do
           = icon('fas', 'cog', class: "side-header__box__btn--icon")
   .group-list
+    - current_user.groups.each do |group|
     .group-list__info
+      = link_to group_messages_path(group) do
       .group-list__info__name
-        GroupName
+        = group.name
       .group-list__info__new-message
-        MessageNew1
-    .group-list__info
-      .group-list__info__name
-        GroupName2
-      .group-list__info__new-message
-        MessageNew2
+        メッセージはまだありません
