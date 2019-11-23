@@ -50,24 +50,30 @@
     }
   }
   &__form {
-    @include square-setting(90px,null,#dddddd);
+    @include square-setting(90px,100%,#DDDDDD);
     box-sizing: border-box;
-    padding: 20px 50px 20px 40px;
-    &__message {
-      @include square-setting(50px,calc(100% - 150px),null);
-      border: none;
+    padding: 20px 40px 20px 40px;
+    &__box {
+      @include square-setting(50px,calc(100% - 107px),null);
+      margin-right: 0;
+      position: relative;
       float: left;
-      padding-left: 10px;
-    }
-    &__mask {
-      @include square-setting(50px,null,#FFFFFF);
-      float: left;
-      padding-right: 10px;
-      &__image {
-        font-size: 20px;
-        line-height: 50px;
-        &__file-select-btn {
-          display: none;
+      &__message {
+        @include square-setting(50px,calc(100% - 50px),null);
+        border: none;
+        float: left;
+        padding-left: 10px;
+        padding-right: 40px;
+      }
+      &__mask {
+        position: absolute;
+        right: 10px;
+        &__image {
+          font-size: 20px;
+          line-height: 50px;
+          &__file-select-btn {
+            display: none;
+          }
         }
       }
     }
@@ -75,7 +81,7 @@
       @include square-setting(50px,null,#38AEF0);
       @include font-setting(#FFFFFF,16px,normal);
       border: none;
-      float: right;
+      float: left;
       margin-left: 15px;
       padding: 0 30px;
     }
