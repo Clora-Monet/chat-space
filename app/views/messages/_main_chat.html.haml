@@ -5,8 +5,8 @@
         = @group.name
       .main__header__group__info__members
         Member:
-        - @messages.each do |message|
-          = message.user.name
+        - @group.group_users.each do |group_users|
+          = group_users.user.name
     .main__header__edit-btn
       =link_to edit_group_path(@group), class: "main__header__edit-btn__text" do
         Edit
