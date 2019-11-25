@@ -2,7 +2,7 @@ $(function() {
   function buildMessage(message) {
     // 「もしメッセージに画像が含まれていたら」という条件式
     if (message.image){
-      var img = message.image ? `<img src= ${ message.image }>` : "";
+      var img = message.image ? `<img src= ${message.image}>` : "";
       var html = `<div class="main__messages__box">
                     <div class="main__messages__box__info">
                     <div class="main__messages__box__info__user-name">
