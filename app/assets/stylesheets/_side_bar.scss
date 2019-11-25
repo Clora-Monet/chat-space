@@ -26,10 +26,16 @@
       &__name {
         @include font-setting(#FFFFFF,15px,bold);
         margin-bottom: 5px;
+        display: block;
+        text-decoration: none;
       }
       &__new-message {
         @include font-setting(#FFFFFF,11px,bold)
       }
     }
   }
+}
+
+a {
+  text-decoration: none;
 }
