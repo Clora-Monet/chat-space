@@ -29,8 +29,9 @@
     }
   }
   &__messages {
+    overflow: scroll;
     padding: 0 40px;
-    height: calc(100vh - 190px);
+    height:  calc(100vh - 190px);
     &__box {
       padding-top: 46px;
       &__info {
@@ -50,6 +51,7 @@
     }
   }
   &__form {
+    z-index: 1;
     @include square-setting(90px,100%,#DDDDDD);
     box-sizing: border-box;
     padding: 20px 40px 20px 40px;
