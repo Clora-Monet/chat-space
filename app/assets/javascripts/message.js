@@ -9,7 +9,7 @@ $(function() {
                       ${message.name}
                     </div>
                     <div class="main__messages__box__info__creat-at">
-                      ${message.create_at}
+                      ${message.created_at}
                     </div>
                     </div>
                     <div class="main__messages__box__text">
@@ -106,7 +106,7 @@ $(function() {
         var insertHTML = ''; //追加するHTMLの入れ物を作る
         //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
         messages.forEach(function (message) {
-        var insertHTML = buildHTML(message); //メッセージが入ったHTMLを取得
+        insertHTML = buildHTML(message); //メッセージが入ったHTMLを取得
           $('.main__messages').append(insertHTML);//メッセージを追加
         })
         $('.main__messages').animate({ scrollTop: $('.main__messages')[0].scrollHeight});
