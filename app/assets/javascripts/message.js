@@ -1,4 +1,6 @@
 $(function() {
+  // var last_message_id = $('.message:last').data('message-id');
+  // console.log(last_message_id);
   function buildMessage(message) {
       var img = message.image ? `<img src= ${message.image}>` : "";
       var html = `<div class="main__messages__box">
@@ -86,32 +88,27 @@ $(function() {
     });
   })
 
-  var last_message_id = $('.message:last').data('message-id');
+  // var last_message_id = $('.message:last').data('message-id');
   var reloadMessages = function() {
+    // var last_message_id = $('.message:last').data('message-id');
     if (window.location.href.match(/\/groups\/[0-9]+\/messages/)){
       //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
       var groups_id = location.href.match(/\/groups\/[0-9]+\//);
       var url = groups_id[0] + "api/messages/";
       var last_message_id = $('.message:last').data('message-id');
-      // console.log(last_message_id)
+      console.log(last_message_id);
       $.ajax({
-        //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
-        url: url,
-        //ルーティングで設定した通りhttpメソッドをgetに指定
-        type: 'get',
+        url: url, //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
+        type: 'get', //ルーティングで設定した通りhttpメソッドをgetに指定
         dataType: 'json',
-        //dataオプションでリクエストに値を含める
-        data: {id: last_message_id}
+        data: {id: last_message_id}//dataオプションでリクエストに値を含める
       })
       .done(function(messages) {
-        //追加するHTMLの入れ物を作る
-        var insertHTML = '';
+        var insertHTML = ''; //追加するHTMLの入れ物を作る
         //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
-        messages.forEach(function(message){
-          //メッセージが入ったHTMLを取得
-          insertHTML = buildHTML(message);
-          //メッセージを追加
-          $('.main__messages').append(insertHTML);
+        messages.forEach(function (message) {
+          insertHTML = buildHTML(message); //メッセージが入ったHTMLを取得
+          $('.main__messages').append(insertHTML);//メッセージを追加
         })
         $('.main__messages').animate({ scrollTop: $('.main__messages')[0].scrollHeight});
       })
@@ -119,7 +116,7 @@ $(function() {
         console.log('error');
       });
     };
-  };
+  }
   setInterval(reloadMessages, 7000);
 });
 
