@@ -1,6 +1,5 @@
 $(function() {
   
- 
   function buildMessage(message) {
       var img = message.image ? `<img src= ${message.image}>` : "";
       var html = `<div class="main__messages__box">
@@ -48,12 +47,16 @@ $(function() {
     });
   })
   var reloadMessages = function() {
+    
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
     last_message_id = $('.message:last').data('message-id');
-    url = 
+    
+    groups_id = location.href.match(/\/groups\/([0-9]+)\//);
+    url = groups_id[0] + "api/messeges/";
+    console.log(url);
     $.ajax({
       //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
-      url: ※※※,
+      url: url,
       //ルーティングで設定した通りhttpメソッドをgetに指定
       type: 'get',
       dataType: 'json',
