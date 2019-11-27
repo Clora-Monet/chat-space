@@ -47,7 +47,46 @@ $(function() {
     });
   })
   var reloadMessages = function() {
-    
+    var buildHTML = function(message) {
+      if (message.content && message.image.url) {
+        //data-idが反映されるようにしている
+        var html_template = 
+        `<div class="message" data-message_id=` + message.id + `>` +
+          `<div class="upper-message">` +
+            `<div class="upper-message__user-name">` +
+              message.user_name +
+            `</div>` +
+            `<div class="upper-message__date">` +
+              message.created_at +
+            `</div>` +
+          `</div>`
+        var html =  html_template +
+          `<div class="lower-message">` +
+            `<p class="lower-message__content">` +
+              message.content +
+            `</p>` +
+            `<img src="` + message.image.url + `" class="lower-message__image" >` +
+          `</div>` +
+        `</div>`
+      } else if (message.content) {
+        //同様に、data-idが反映されるようにしている
+        var html = html_template +
+          `<div class="lower-message">` +
+            `<p class="lower-message__content">` +
+              message.content +
+            `</p>` +
+          `</div>` +
+        `</div>`
+      } else if (message.image.url) {
+        //同様に、data-idが反映されるようにしている
+        var html = html_template +
+          `<div class="lower-message">` +
+            `<img src="` + message.image.url + `" class="lower-message__image" >` +
+          `</div>` +
+        `</div>`
+      };
+      return html;
+    };
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
     last_message_id = $('.message:last').data('message-id');
     
