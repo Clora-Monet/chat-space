@@ -23,48 +23,6 @@ $(function() {
     return html;
   }
 
-  // var buildHTML = function(message) {
-  //   var html_template = 
-  //     `<div class="message" data-message_id=` + message.id + `>` +
-  //       `<div class="main__messages__box">` +
-  //         `<div class="main__messages__box__info">` +
-  //           `<div class="main__messages__box__info__user-name">` +
-  //             message.user_name +
-  //           `</div>` +
-  //           `<div class="main__messages__box__info__creat-at">` +
-  //             message.created_at +
-  //           `</div>` +
-  //         `</div>`
-  //   if (message.content && message.image.url) {
-  //     //data-idが反映されるようにしている
-  //     var html =  html_template +
-  //       `<div class="main__messages__box__text">` +
-  //         `<p class="main__messages__box__text__content">` +
-  //           message.content +
-  //         `</p>` +
-  //         `<img src="` + message.image.url + `" class="lower-message__image" >` +
-  //       `</div>` +
-  //     `</div>`
-  //   } else if (message.content) {
-  //     //同様に、data-idが反映されるようにしている
-  //     var html = html_template +
-  //       `<div class="main__messages__box__text">` +
-  //         `<p class="main__messages__box__text__content">` +
-  //           message.content +
-  //         `</p>` +
-  //       `</div>` +
-  //     `</div>`
-  //   } else if (message.image.url) {
-  //     //同様に、data-idが反映されるようにしている
-  //     var html = html_template +
-  //       `<div class="lower-message">` +
-  //         `<img src="` + message.image.url + `" class="lower-message__image" >` +
-  //       `</div>` +
-  //     `</div>`
-  //   };
-  //   return html;
-  // };
-
   $('#new_message').on('submit', function(e) {
     e.preventDefault();
     var message = new FormData(this);
