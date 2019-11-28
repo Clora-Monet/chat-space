@@ -14,7 +14,7 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password: Syrup16g
+  password: <%= ENV['Syrup16g'] %>
   socket: /tmp/mysql.sock
 
 development:
