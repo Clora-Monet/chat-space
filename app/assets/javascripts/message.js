@@ -3,21 +3,21 @@ $(function() {
       var img = message.image ? `<img src= ${message.image}>` : "";
 
       var html = `<div class="message" data-message-id="${message.id}">
-                  <div class="main__messages__box">
-                    <div class="main__messages__box__info">
-                    <div class="main__messages__box__info__user-name">
-                      ${message.name}
-                    </div>
-                    <div class="main__messages__box__info__creat-at">
-                      ${message.created_at}
-                    </div>
-                    </div>
-                    <div class="main__messages__box__text">
-                    <p class="main__messages__box__text__content">
-                      ${message.content}
-                    </p>
-                      ${img}
-                    </div>
+                    <div class="main__messages__box">
+                      <div class="main__messages__box__info">
+                        <div class="main__messages__box__info__user-name">
+                          ${message.name}
+                        </div>
+                      <div class="main__messages__box__info__creat-at">
+                        ${message.created_at}
+                      </div>
+                      </div>
+                      <div class="main__messages__box__text">
+                        <p class="main__messages__box__text__content">
+                          ${message.content}
+                        </p>
+                          ${img}
+                      </div>
                     </div>
                   </div>`
     return html;
@@ -49,11 +49,9 @@ $(function() {
 
   var reloadMessages = function() {
     if (window.location.href.match(/\/groups\/[0-9]+\/messages/)){
-      //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
-      var groups_id = location.href.match(/\/groups\/[0-9]+\//);
+      var groups_id = location.href.match(/\/groups\/[0-9]+\//);//urlからgroup_idの取得
       var url = groups_id[0] + "api/messages/";
-      var last_message_id = $('.message:last').data('message-id');
-      console.log(last_message_id);
+      var last_message_id = $('.message:last').data('message-id');//カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
       $.ajax({
         url: url, //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
         type: 'get', //ルーティングで設定した通りhttpメソッドをgetに指定
