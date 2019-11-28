@@ -43,7 +43,7 @@ $(function() {
       $('.main__messages').animate({ scrollTop: $('.main__messages')[0].scrollHeight});
     })
     .fail(function() {
-      alert('error00');
+      alert('非同期更新に失敗しました');
     });
   })
 
@@ -68,7 +68,7 @@ $(function() {
         $('.main__messages').animate({ scrollTop: $('.main__messages')[0].scrollHeight});
       })
       .fail(function() {
-        console.log('error');
+        alert('自動更新に失敗しました');
       });
     };
   }
