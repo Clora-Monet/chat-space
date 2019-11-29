@@ -45,6 +45,7 @@ $(function() {
     .fail(function() {
       alert('非同期更新に失敗しました');
     });
+    return false;
   })
 
   var reloadMessages = function() {
